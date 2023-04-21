@@ -62,7 +62,9 @@ const Game = () => {
         //grab two random artists plus the actual artist and place them into an array
         buttonArtists[0] = artistArray.splice(((Math.floor((Math.random() * 100)) % artistArray.length)), 1)[0];
         buttonArtists[1] = artistArray.splice(((Math.floor((Math.random() * 100)) % artistArray.length)), 1)[0];
-        buttonArtists[2] = artistName;
+        buttonArtists[2] = artistArray.splice(((Math.floor((Math.random() * 100)) % artistArray.length)), 1)[0];
+        buttonArtists[3] = artistArray.splice(((Math.floor((Math.random() * 100)) % artistArray.length)), 1)[0];
+        buttonArtists[4] = artistName;
         
         //shuffle the array
         for (var i = buttonArtists.length - 1; i > 0; i--) {
@@ -154,6 +156,24 @@ const Game = () => {
             }}}
           className='guessButtons'
           onClick={() => guessHandler(round.buttonArtists[2])}>{round.buttonArtists[2]}</Button>
+        <Button variant="contained" 
+          sx={{ m: 1.5, 
+            boxShadow: 1,
+            background: '#6a8f8b',
+            ":hover": {
+              bgcolor: "#4b6260",
+            }}}
+          className='guessButtons'
+          onClick={() => guessHandler(round.buttonArtists[3])}>{round.buttonArtists[3]}</Button>
+        <Button variant="contained" 
+          sx={{ m: 1.5, 
+            boxShadow: 1,
+            background: '#6a8f8b',
+            ":hover": {
+              bgcolor: "#4b6260",
+            }}}
+          className='guessButtons'
+          onClick={() => guessHandler(round.buttonArtists[4])}>{round.buttonArtists[4]}</Button>
       </div>
     </div>
   )
